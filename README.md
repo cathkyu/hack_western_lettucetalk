@@ -1,4 +1,4 @@
-# hack_western_voicetalk
+# Hack Western 2019: LettuceTalk
 
 ## Inspiration
 We were inspired to create a safe and supportive environment targeted towards individuals with ADHD/autism to practice and improve upon their social skills. As many struggle having weak communication skills and may not have the opportunity to work on it regularly, we wanted our web application to be an avenue for more opportunities of talking. We decided to tackle the 
