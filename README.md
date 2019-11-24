@@ -2,7 +2,7 @@
 
 
 
-![Initial](https://user-images.githubusercontent.com/37402072/69495847-8c9b6200-0e99-11ea-83bb-0a7170b232f5.png)
+![Initial](https://user-images.githubusercontent.com/37402072/69496020-7bebeb80-0e9b-11ea-9134-fec157d9468e.jpg)
 ![Initial](https://user-images.githubusercontent.com/37402072/69495810-21519000-0e99-11ea-9f01-c7d7a376dce4.jpg)
 
 ## Inspiration
