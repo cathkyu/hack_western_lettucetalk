@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Voice Hack demo</title>
+<title>LettuceTalk</title>
+<head>
+    <script src="./lib.js"></script>
+</head>
 <style>
   * {
     font-family: Verdana, Arial, sans-serif;
@@ -16,8 +19,8 @@
     color:#33F;
   }
   .button {
-    background: -webkit-linear-gradient(top,#008dfd 0,#0370ea 100%);
-    border: 1px solid #076bd2;
+    background: -webkit-linear-gradient(top,#1cc484 0,#2ad7a3 100%);
+    border: 1px solid #37b694;
     border-radius: 3px;
     color: #fff;
     display: none;
@@ -26,13 +29,15 @@
     line-height: 1.3;
     padding: 8px 25px;
     text-align: center;
-    text-shadow: 1px 1px 1px #076bd2;
+    text-shadow: 1px 1px 1px #2f9d60;
     letter-spacing: normal;
   }
   .center {
     padding: 10px;
     text-align: center;
+    color: seagreen;
   }
+
   .final {
     color: black;
     padding-right: 3px; 
@@ -41,9 +46,9 @@
     color: gray;
   }
   .info {
-    font-size: 14px;
+    font-size: 20px;
     text-align: center;
-    color: #777;
+    color:seagreen;
     display: none;
   }
   .headings {
@@ -61,14 +66,15 @@
     text-align: center;
     vertical-align: top;
   }
+
   #headline {
     font-size: 40px;
     font-weight: 300;
   }
   #info {
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
-    color: #777;
+    color:seagreen;
     visibility: hidden;
   }
   #print_score {
@@ -92,8 +98,7 @@
   }
 </style>
 <h1 class="center" id="headline">
-  <a href="">
-    Let's talk together</a> Demonstration</h1>
+  LettuceTalk<a href="">Together</a></h1>
 <div id="info">
   <p id="info_start">Choose a category, then click on the microphone icon and begin speaking.</p>
   <p id="info_speak_now">Speak now.</p>
@@ -112,6 +117,7 @@
   <p id="info_score0">Nice try, but keep up the practice!</p>
   <p id="info_score1">Good work, keep it up!</p>
   <p id="info_score2">Amazing job, excellent sentences!</p>
+  <p id="info_score3">Stupendous talking!</p>
 </div>
 
 
@@ -286,10 +292,12 @@ const grade5 = ['abolish', 'absurd', 'abuse', 'access', 'accomplish', 'achieveme
 const grade6 = ['abandon', 'abundant', 'access', 'accommodate', 'accumulate', 'adapt', 'adhere', 'agony', 'allegiance', 'ambition', 'ample', 'anguish', 'anticipate', 'anxious', 'apparel', 'appeal', 'apprehensive', 'arid', 'arrogant', 'awe', 'barren', 'beacon', 'beneficial', 'blunder', 'boisterous', 'boycott', 'burden', 'campaign', 'capacity', 'capital', 'chronological', 'civic', 'clarity', 'collaborate', 'collide', 'commend', 'commentary', 'compact', 'composure', 'concise', 'consent', 'consequence', 'conserve', 'conspicuous', 'constant', 'contaminate', 'context', 'continuous', 'controversy', 'convenient', 'cope', 'cordial', 'cultivate', 'cumulative', 'declare', 'deluge', 'dense', 'deplete', 'deposit', 'designate', 'desperate', 'deteriorate', 'dialogue', 'diligent', 'diminish', 'discretion', 'dissent', 'dissolve', 'distinct', 'diversity', 'domestic', 'dominate', 'drastic', 'duration', 'dwell', 'eclipse', 'economy', 'eerie', 'effect', 'efficient', 'elaborate', 'eligible', 'elude', 'encounter', 'equivalent', 'erupt', 'esteem', 'evolve', 'exaggerate', 'excel', 'exclude', 'expanse', 'exploit', 'extinct', 'extract', 'factor', 'former', 'formulates', 'fuse', 'futile', 'generate', 'genre', 'habitat', 'hazardous', 'hoax', 'hostile', 'idiom', 'ignite', 'immense', 'improvises', 'inept', 'inevitable', 'influence', 'ingenious', 'innovation', 'intimidate', 'jovial', 'knack', 'leeway', 'legislation', 'leisure', 'liberate', 'likeness', 'linger', 'literal', 'loathe', 'lure', 'majority', 'makeshift', 'manipulate', 'marvel', 'massive', 'maximum', 'meager', 'mere', 'migration', 'mimic', 'minute', 'monotonous', 'negotiate', 'objective', 'obstacle', 'omniscient', 'onset', 'optimist', 'originate', 'painstaking', 'paraphrase', 'parody', 'persecute', 'plummet', 'possess', 'poverty', 'precise', 'predicament', 'predict', 'prejudice', 'preliminary', 'primitive', 'priority', 'prominent', 'propel', 'prosecute', 'prosper', 'provoke', 'pursue', 'quest', 'recount', 'refuge', 'reinforce', 'reluctant', 'remorse', 'remote', 'resolute', 'restrain', 'retaliate', 'retrieve', 'rigorous', 'rural', 'salvage', 'sanctuary', 'siege', 'significant', 'solar', 'soothe', 'stationary', 'stifle', 'strive', 'subordinate', 'subsequent', 'superior', 'supplement', 'swarm', 'tangible', 'terminate', 'terrain', 'trait', 'transform', 'transport', 'treacherous', 'unanimous', 'unique', 'unruly', 'urban', 'vacate', 'verdict', 'verge', 'vibrant', 'vital', 'vow ']
 const grade7 = ['abate', 'abnormal', 'abode', 'abrupt', 'accelerate', 'acclaim', 'acknowledge', 'acquire', 'aspire', 'acrid', 'addict', 'adjacent', 'admonish', 'affliction', 'agitate', 'ajar', 'akin', 'allege', 'annihilate', 'anonymous', 'antagonize', 'apathy', 'arbitrate', 'astute', 'authentic', 'avert', 'bellow', 'beseech', 'bestow', 'bewilder', 'bigot', 'blatant', 'bleak', 'braggart', 'brawl', 'browse', 'bystander', 'candid', 'canine', 'canny', 'capricious', 'capsize', 'casual', 'casualty', 'catastrophe', 'cater', 'chorus', 'citrus', 'clamber', 'climax', 'compromise', 'concur', 'confront', 'congested', 'conjure', 'consult', 'corrupt', 'counterfeit', 'covet', 'customary', 'debut', 'deceased', 'dependent', 'despondent', 'detach', 'devour', 'dishearten', 'dismal', 'dismantle', 'distraught', 'docile', 'downright', 'drone', 'dumbfound', 'emblem', 'endure', 'ensue', 'enthrall', 'epidemic', 'erode', 'exuberant', 'fathom', 'feud', 'figment', 'firebrand', 'flabbergast', 'flagrant', 'flaw', 'fruitless', 'gaudy', 'geography', 'gratify', 'gravity', 'grim', 'grimy', 'grueling', 'gruesome', 'haggle', 'headlong', 'hilarious', 'homage', 'homicide', 'hospitable', 'hurtle', 'hybrid', 'illiterate', 'impede', 'implore', 'incident', 'incredulous', 'infamous', 'infuriate', 'insinuate', 'intensified', 'inundate', 'irate', 'lavish', 'legacy', 'legitimate', 'lethal', 'loath', 'lurk', 'magnetic', 'mirth', 'quench', 'magnitude', 'maternal', 'maul', 'melancholy', 'mellow', 'momentum', 'mortify', 'mull', 'murky', 'narrative', 'negligent', 'nimble', 'nomadic', 'noteworthy', 'notify', 'notorious', 'nurture', 'obnoxious', 'oration', 'orthodox', 'overwhelm', 'pamper', 'patronize', 'peevish', 'pelt', 'pending', 'perceived', 'perjury', 'permanent', 'persist', 'perturb', 'pique', 'pluck', 'poised', 'ponder', 'potential', 'predatory', 'presume', 'preview', 'prior', 'prowess', 'radiant', 'random', 'rant', 'recede', 'reprimand', 'resume', 'retort', 'robust', 'rupture', 'saga', 'sequel', 'sham', 'shirk', 'simultaneously', 'snare', 'species', 'status', 'stodgy', 'substantial', 'subtle', 'sullen', 'supervise', 'tamper', 'throb', 'toxic', 'tragedy', 'trickle', 'trivial', 'uncertainty', 'unscathed', 'upright', 'urgent', 'utmost', 'vengeance', 'vicious', 'vindictive', 'vista', 'vocation', 'void', 'wary', 'whim', 'wince', 'wrath', 'yearn ']
 const grade8 = ['abet', 'accord', 'adept', 'advocate', 'agile', 'allot', 'aloof', 'amiss', 'analogy', 'anarchy', 'antics', 'apprehend', 'ardent', 'articulate', 'assail', 'assimilate', 'atrocity', 'attribute', 'audacious', 'augment', 'authority', 'avail', 'avid', 'awry', 'balmy', 'banter', 'barter', 'benign', 'bizarre', 'blasé', 'bonanza', 'bountiful', 'cache', 'capacious', 'caption', 'chastise', 'citadel', 'cite', 'clad', 'clarify', 'commemorate', 'component', 'concept', 'confiscate', 'connoisseur', 'conscientious', 'conservative', 'contagious', 'conventional', 'convey', 'crucial', 'crusade', 'culminate', 'deceptive', 'decipher', 'decree', 'deface', 'defect', 'deplore', 'deploy', 'desist', 'desolate', 'deter', 'dialect', 'dire', 'discern', 'disdain', 'disgruntled', 'dispatch', 'disposition', 'doctrine', 'dub', 'durable', 'eccentric', 'elite', 'embargo', 'embark', 'encroach', 'endeavor', 'enhance', 'enigma', 'epoch', 'era', 'eventful', 'evolve', 'exceptional', 'excerpt', 'excruciating', 'exemplify', 'exotic', 'facilitate', 'fallacy', 'fastidious', 'feasible', 'fend', 'ferret', 'flair', 'flustered', 'foreboding', 'forfeit', 'formidable', 'fortify', 'foster', 'gaunt', 'gingerly', 'glut', 'grapple', 'grope', 'gullible', 'haggard', 'haven', 'heritage', 'hindrance', 'hover', 'humane', 'imperative', 'inaugurate', 'incense', 'indifferent', 'infinite', 'instill', 'institute', 'intervene', 'intricate', 'inventive', 'inventory', 'irascible', 'jurisdiction', 'languish', 'legendary', 'liberal', 'loll', 'lucrative', 'luminous', 'memoir', 'mercenary', 'mien', 'millennium', 'minimize', 'modify', 'muse', 'muster', 'onslaught', 'ornate', 'ovation', 'overt', 'pang', 'panorama', 'perspective', 'phenomenon', 'pioneer', 'pithy', 'pivotal', 'plausible', 'plunder', 'porous', 'preposterous', 'principal', 'prodigy', 'proficient', 'profound', 'pseudonym', 'pungent', 'rankle', 'rational', 'rebuke', 'reception', 'recourse', 'recur', 'renounce', 'renown', 'revenue', 'rubble', 'rue', 'sage', 'sedative', 'serene', 'servile', 'shackle', 'sleek', 'spontaneous', 'sporadic', 'stamina', 'stance', 'staple', 'stint', 'strident', 'sublime', 'subside', 'succumb', 'surpass', 'susceptible', 'swelter', 'tedious', 'teem', 'theme', 'tirade', 'tract', 'transition', 'trepidation', 'turbulent', 'tycoon', 'ultimate', 'ungainly', 'vice versa', 'vie', 'vilify', 'voracious', 'wage', 'wrangle']
-var total_grades = [grade8, grade7, grade6, grade5, grade4, grade3, grade2];
+var total_grades = [grade8, grade7, grade6, grade5, grade4, grade3, grade2].reverse();
 var score = 5;        //need to reset each time?-----------------
 var final_score = 0;
 var final_grade = 0;
+var gradeWords = [];
+
 if (!('webkitSpeechRecognition' in window)) {
   upgrade();
 } else {
@@ -322,7 +330,9 @@ if (!('webkitSpeechRecognition' in window)) {
       ignore_onend = true;
     }
   };
-  recognition.onend = function() {
+  recognition.onend = async function() {
+    console.log('onend')
+    await scorer(true);
     recognizing = false;
     if (ignore_onend) {
       return;
@@ -368,35 +378,87 @@ var first_char = /\S/;
 function capitalize(s) {
   return s.replace(first_char, function(m) { return m.toUpperCase(); });
 }
-function scorer() {
-  if (final_transcript != ''){
-  var transcript_split = (final_transcript.toLowerCase()).split(' ');
-  score=0;
-  for (var x = 0; x < total_grades.length; x++){
-    for (var i = 0; i < transcript_split.length; i++)
-      {
-        for (var j = 0; j < total_grades[x].length; j++)
-          {
-          if (transcript_split[i] === grade8[j]){
-            score++;
-            final_grade = 9 - x;
-            break;
-          }
-      }
-    }
+
+function addToSheets(score, word) {
+  console.log(score, word);
+  return lib.cathkyu['http-project']['@dev'].endpoint({score, word}).catch(err => console.log(err));
+}
+
+async function scorer(final) { 
+  let counter=0;
+  
+  if (final_transcript === '') {
+    return;
+  }  
+
+  let transcript_split = (final_transcript.toLowerCase()).split(' '); 
+
+  if (!transcript_split.length) {
+    return;
   }
-  if (transcript_split.length >=5)//&& transcript_split.length <= 20)
+
+  let foundWords = total_grades.reduce((results, grade, index) => {   //reduce summarizes the array, loops over each element of array
+    let words = transcript_split.filter(word => {
+      return grade.includes(word);
+    });
+    words = words.map(word => {
+      return {
+        word: word,
+        grade: index + 2
+      };
+    });
+    results = results.concat(words);
+    return results;
+  }, []);
+
+  console.log(foundWords);
+
+
+  let score = foundWords.length;
+
+  if (score == 0) {
+    showInfo('info_score0');
+  }
+  if (score == 1) {
+    showInfo('info_score1');
+  }
+  if (score == 2) {
+    showInfo('info_score2');
+  }
+  if (score >= 3) {
+    showInfo('info_score3');
+  }
+
+  if (final) {
+    console.log(foundWords);
+    await addToSheets(score, foundWords.map(item => item.word).join(','));
+  }
+
+  
+  // for (var x = 0; x < total_grades.length; x++){
+  //   for (var i = 0; i < transcript_split.length; i++)
+  //     {
+  //       for (var j = 0; j < total_grades[x].length; j++)
+  //         {
+  //         if (transcript_split[i] === total_grades[x][j]){
+  //           score++;
+  //           counter++;
+  //           final_grade = 9 - x;
+  //           gradeWords[counter] = total_grades[x][j];         //
+  //         }
+  //     }
+  //     counter = 0;
+  //   }
+  // }
+  
+  if (transcript_split.length >=5)
   {
     score++;
   }
-  if (score == 0) 
-    showInfo('info_score0');
-  if (score == 1)
-    showInfo('info_score1');
-  if (score == 2) 
-    showInfo('info_score2');
-  }
+  
 }
+
+
 function finalResults() {
   sentenceLength = transcript_split.length
   vocabLevel = final_grade
@@ -410,7 +472,7 @@ function ctgy1Button() {
   showButtons('none');
   ctgy1_info.style.display = 'inline-block';
   showInfo('');
-  readOutLoud(ctgy1_info.outerHTML);
+  readOutLoud(ctgy1_info.innerHTML);
 }
 function ctgy2Button() {
   if (recognizing) {
@@ -421,18 +483,18 @@ function ctgy2Button() {
   showButtons('none');
   ctgy2_info.style.display = 'inline-block';
   showInfo('');
-  readOutLoud(ctgy2_info.outerHTML);
+  readOutLoud(ctgy2_info.innerHTML);
 }
 function ctgy3Button() {
   if (recognizing) {
     recognizing = false;
     recognition.stop();
   }
-  ctgy3.style.display = 'none';  ///do we need these bc of next line?
+  ctgy3.style.display = 'none';  ///do we need this bc of next line?
   showButtons('none');
   ctgy3_info.style.display = 'inline-block';
   showInfo('');
-  readOutLoud(ctgy3_info.outerHTML);
+  readOutLoud(ctgy3_info.innerHTML);
 }
 function ctgy4Button() {
   if (recognizing) {
@@ -443,7 +505,7 @@ function ctgy4Button() {
   showButtons('none');
   ctgy4_info.style.display = 'inline-block';
   showInfo('');
-  readOutLoud(ctgy4_info.outerHTML);
+  readOutLoud(ctgy4_info.innerHTML);
 }
 function ctgy5Button() {
   if (recognizing) {
@@ -454,7 +516,7 @@ function ctgy5Button() {
   showButtons('none');
   ctgy5_info.style.display = 'inline-block';
   showInfo('');
-  readOutLoud(ctgy5_info.outerHTML);
+  readOutLoud(ctgy5_info.innerHTML);
 }
 function ctgy6Button() {
   if (recognizing) {
@@ -465,7 +527,7 @@ function ctgy6Button() {
   showButtons('none');
   ctgy6_info.style.display = 'inline-block';
   showInfo('');
-  readOutLoud(ctgy6_info.outerHTML);
+  readOutLoud(ctgy6_info.innerHTML);
 }
 function ctgy7Button() {
   if (recognizing) {
@@ -476,7 +538,7 @@ function ctgy7Button() {
   showButtons('none');
   ctgy7_info.style.display = 'inline-block';
   showInfo('');
-  readOutLoud(ctgy7_info.outerHTML);
+  readOutLoud(ctgy7_info.innerHTML);
 }
 function ctgy8Button() {
   if (recognizing) {
@@ -487,7 +549,7 @@ function ctgy8Button() {
   showButtons('none');
   ctgy8_info.style.display = 'inline-block';
   showInfo('');
-  readOutLoud(ctgy8_info.outerHTML);
+  readOutLoud(ctgy8_info.innerHTML);
 }
 function startButton(event) {
   if (recognizing) {
@@ -505,7 +567,6 @@ function startButton(event) {
   interim_span.innerHTML = '';
   start_img.src = 'mic-slash.gif';
   showInfo('info_allow');
-  //showButtons('none');
   start_timestamp = event.timeStamp;
 }
 function showInfo(s) {
