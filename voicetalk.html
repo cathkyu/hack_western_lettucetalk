@@ -110,7 +110,7 @@
      Upgrade to <a href="//www.google.com/chrome">Chrome</a>
      v25 or later.</p>
   <p id="info_score0">Nice try, but keep up the practice!</p>
-  <p id="info_score1">Good work, keep up the good work!</p>
+  <p id="info_score1">Good work, keep it up!</p>
   <p id="info_score2">Amazing job, excellent sentences!</p>
 </div>
 
@@ -133,63 +133,58 @@
 
   <div class="sidebyside" >
     <button id="ctgy1" class="button" onclick="ctgy1Button()">
-      Category 1</button>
+       Animals</button>
     <div id="ctgy1_info" class="info">
-      add category1.<br>(Command-C on Mac.)
-    </div>
+      What is your favourite animal and why?</div>
   </div>
     
   <div class="sidebyside">
     <button id="ctgy2" class="button" onclick="ctgy2Button()">
-      Create Email</button>
+      Arts</button>
     <div id="ctgy2_info" class="info">
-      Text sent to default emai.<br>(See :/// to change.)
-    </div>
+      What is your favourite type of art and why?</div>
   </div>
       
   <div class="sidebyside">
     <button id="ctgy3" class="button" onclick="ctgy3Button()">
-      Create test</button>
+      Food</button>
     <div id="ctgy3_info" class="info">
-      Text sent to default testests application.<br>asdf
-    </div>
+      What is your favourite food?</div>
   </div>  
       
   <div class="sidebyside">
     <button id="ctgy4" class="button" onclick="ctgy4Button()">
-      Create test2</button>
+      Sport</button>
     <div id="ctgy4_info" class="info">
-      Text2 sent to default testests application.<br>asdf
-    </div>
+      What sport do you play the most and why?</div>
   </div>  
     
   <div class="sidebyside">
     <button id="ctgy5" class="button" onclick="ctgy5Button()">
-      Create test2</button>
+      Travel</button>
     <div id="ctgy5_info" class="info">
-      Text2 sent to default testests application.<br>asdf
-    </div>
+      Where have you always wanted to travel?</div>
   </div>  
     
   <div class="sidebyside">
     <button id="ctgy6" class="button" onclick="ctgy6Button()">
-      Create test2</button>
+      Houses</button>
     <div id="ctgy6_info" class="info">
-      Text2 sent to default testests application.<br>asdf        </div>
+      What place would you always call home?</div>
   </div>  
     
   <div class="sidebyside">
     <button id="ctgy7" class="button" onclick="ctgy7Button()">
-      Create test2</button>
+      Fashion</button>
     <div id="ctgy7_info" class="info">
-      Text2 sent to default testests application.<br>asdf          </div>
+      What is your personal style?</div>
   </div>  
     
   <div class="sidebyside">
     <button id="ctgy8" class="button" onclick="ctgy8Button()">
-      Create test2</button>
+      Crafts</button>
     <div id="ctgy8_info" class="info">
-      Text2 sent to default testests application.<br>asdf            </div>
+      What is the coolest thing you've ever made?</div>
   </div>  
 
   <p>
@@ -263,7 +258,6 @@ var langs =
                      ['yue-Hant-HK', '粵語 (香港)']],
  ['日本語',           ['ja-JP']],
  ['Lingua latīna',   ['la']]];
-
 for (var i = 0; i < langs.length; i++) {
   select_language.options[i] = new Option(langs[i][0], i);
 }
@@ -271,7 +265,6 @@ select_language.selectedIndex = 6;
 updateCountry();
 select_dialect.selectedIndex = 6;
 showInfo('info_start');
-
 function updateCountry() {
   for (var i = select_dialect.options.length - 1; i >= 0; i--) {
     select_dialect.remove(i);
@@ -282,12 +275,10 @@ function updateCountry() {
   }
   select_dialect.style.visibility = list[1].length == 1 ? 'hidden' : 'visible';
 }
-
 var final_transcript = '';
 var recognizing = false;
 var ignore_onend;
 var start_timestamp;
-
 const grade2 = ['accident', 'agree', 'arrive', 'astronomy', 'atlas', 'attention', 'award', 'aware', 'balance', 'banner', 'bare', 'base', 'beach', 'besides', 'blast', 'board', 'bounce', 'brain', 'branch', 'brave', 'bright', 'cage', 'calf', 'calm', 'career', 'center', 'cheer', 'chew', 'claw', 'clear', 'cliff', 'club', 'collect', 'connect', 'core', 'corner', 'couple', 'crowd', 'curious', 'damp', 'dangerous', 'dash', 'dawn', 'deep', 'demolish', 'design', 'discard', 'dive', 'dome', 'doubt', 'dozen', 'earth', 'enemy', 'evening', 'exactly', 'excess', 'factory', 'fair', 'famous', 'feast', 'field', 'finally', 'flap', 'float', 'flood', 'fold', 'fresh', 'frighten', 'fuel', 'gap', 'gaze', 'gift', 'gravity', 'greedy', 'harm', 'herd', 'idea', 'insect', 'instrument', 'invent', 'island', 'leader', 'leap', 'lizard', 'local', 'lonely', 'luxury', 'march', 'mention', 'motor', 'nervous', 'net', 'nibble', 'notice', 'ocean', 'pack', 'pale', 'parade', 'past', 'peak', 'planet', 'present', 'proof', 'reflect', 'rumor', 'safe', 'scholar', 'seal', 'search', 'settle', 'share', 'shelter', 'shiver', 'shy', 'skill', 'slight', 'smooth', 'soil', 'stack', 'steady', 'strand', 'stream', 'support', 'team', 'telescope', 'tiny', 'tower', 'travel', 'tremble', 'universe', 'village', 'warn', 'weak', 'wealthy', 'whisper', 'wise', 'wonder', 'worry', 'yard', 'zigzag ']
 const grade3 = ['ability', 'absorb', 'accuse', 'act', 'active', 'actual', 'adopt', 'advantage', 'advice', 'ambition', 'ancient', 'approach', 'arrange', 'arctic', 'attitude', 'attract', 'average', 'avoid', 'bold', 'border', 'brief', 'brilliant', 'cable', 'capture', 'certain', 'chill', 'clever', 'climate', 'cling', 'coast', 'confess', 'consider', 'contain', 'continent', 'convince', 'coward', 'crew', 'crumple', 'custom', 'decay', 'deed', 'defend', 'delicate', 'device', 'diagram', 'digest', 'disease', 'distant', 'doze', 'drift', 'elegant', 'enable', 'examine', 'explore', 'fan', 'fatal', 'fierce', 'flutter', 'fortunate', 'frail', 'gasp', 'glide', 'globe', 'grace', 'gradual', 'grasp', 'habit', 'harsh', 'imitate', 'individual', 'intelligent', 'intend', 'journey', 'launch', 'limit', 'locate', 'loyal', 'magnificent', 'marsh', 'method', 'misery', 'moisture', 'mural', 'mystify', 'nation', 'nectar', 'nursery', 'observe', 'opponent', 'opposite', 'ordeal', 'origin', 'outcome', 'passage', 'pastime', 'pause', 'perform', 'plunge', 'predator', 'predict', 'prevent', 'primary', 'privilege', 'process', 'rare', 'rate', 'recall', 'rely', 'remark', 'resident', 'respect', 'responsible', 'reverse', 'revive', 'risk', 'scatter', 'schedule', 'sensitive', 'signal', 'solution', 'spoil', 'starve', 'steer', 'struggled', 'suitable', 'survey', 'swift', 'symbol', 'talent', 'theory', 'thrill', 'treasure', 'triumph', 'value', 'vision', 'volunteer', 'wander', 'wisdom', 'wit', 'woe']
 const grade4 = ['accurate', 'address', 'afford', 'alert', 'analyze', 'ancestor', 'annual', 'apparent', 'appropriate', 'arena', 'arrest', 'ascend', 'assist', 'attempt', 'attentive', 'attractive', 'awkward', 'baggage', 'basic', 'benefit', 'blend', 'blossom', 'burrow', 'calculate', 'capable', 'captivity', 'carefree', 'century', 'chamber', 'circular', 'coax', 'column', 'communicate', 'competition', 'complete', 'concentrate', 'concern', 'conclude', 'confuse', 'congratulate', 'considerable', 'content', 'contribute', 'crafty', 'create', 'demonstrate', 'descend', 'desire', 'destructive', 'develop', 'disaster', 'disclose', 'distract', 'distress', 'dusk', 'eager', 'ease', 'entertain', 'entire', 'entrance', 'envy', 'essential', 'extraordinary', 'flexible', 'focus', 'fragile', 'frantic', 'frequent', 'frontier', 'furious', 'generosity', 'hail', 'hardship', 'heroic', 'host', 'humble', 'impact', 'increase', 'indicate', 'inspire', 'instant', 'invisible', 'jagged', 'lack', 'limb', 'limp', 'manufacture', 'master', 'mature', 'meadow', 'mistrust', 'mock', 'modest', 'noble', 'orchard', 'outstanding', 'peculiar', 'peer', 'permit', 'plead', 'plentiful', 'pointless', 'portion', 'practice', 'precious', 'prefer', 'prepare', 'proceed', 'queasy', 'recent', 'recognize', 'reduce', 'release', 'represent', 'request', 'resist', 'response', 'reveal', 'routine', 'severe', 'shabby', 'shallow', 'sole', 'source', 'sturdy', 'surface', 'survive', 'terror', 'threat', 'tidy', 'tour', 'tradition', 'tragic', 'typical', 'vacant', 'valiant', 'variety', 'vast', 'venture', 'weary']
@@ -296,12 +287,9 @@ const grade6 = ['abandon', 'abundant', 'access', 'accommodate', 'accumulate', 'a
 const grade7 = ['abate', 'abnormal', 'abode', 'abrupt', 'accelerate', 'acclaim', 'acknowledge', 'acquire', 'aspire', 'acrid', 'addict', 'adjacent', 'admonish', 'affliction', 'agitate', 'ajar', 'akin', 'allege', 'annihilate', 'anonymous', 'antagonize', 'apathy', 'arbitrate', 'astute', 'authentic', 'avert', 'bellow', 'beseech', 'bestow', 'bewilder', 'bigot', 'blatant', 'bleak', 'braggart', 'brawl', 'browse', 'bystander', 'candid', 'canine', 'canny', 'capricious', 'capsize', 'casual', 'casualty', 'catastrophe', 'cater', 'chorus', 'citrus', 'clamber', 'climax', 'compromise', 'concur', 'confront', 'congested', 'conjure', 'consult', 'corrupt', 'counterfeit', 'covet', 'customary', 'debut', 'deceased', 'dependent', 'despondent', 'detach', 'devour', 'dishearten', 'dismal', 'dismantle', 'distraught', 'docile', 'downright', 'drone', 'dumbfound', 'emblem', 'endure', 'ensue', 'enthrall', 'epidemic', 'erode', 'exuberant', 'fathom', 'feud', 'figment', 'firebrand', 'flabbergast', 'flagrant', 'flaw', 'fruitless', 'gaudy', 'geography', 'gratify', 'gravity', 'grim', 'grimy', 'grueling', 'gruesome', 'haggle', 'headlong', 'hilarious', 'homage', 'homicide', 'hospitable', 'hurtle', 'hybrid', 'illiterate', 'impede', 'implore', 'incident', 'incredulous', 'infamous', 'infuriate', 'insinuate', 'intensified', 'inundate', 'irate', 'lavish', 'legacy', 'legitimate', 'lethal', 'loath', 'lurk', 'magnetic', 'mirth', 'quench', 'magnitude', 'maternal', 'maul', 'melancholy', 'mellow', 'momentum', 'mortify', 'mull', 'murky', 'narrative', 'negligent', 'nimble', 'nomadic', 'noteworthy', 'notify', 'notorious', 'nurture', 'obnoxious', 'oration', 'orthodox', 'overwhelm', 'pamper', 'patronize', 'peevish', 'pelt', 'pending', 'perceived', 'perjury', 'permanent', 'persist', 'perturb', 'pique', 'pluck', 'poised', 'ponder', 'potential', 'predatory', 'presume', 'preview', 'prior', 'prowess', 'radiant', 'random', 'rant', 'recede', 'reprimand', 'resume', 'retort', 'robust', 'rupture', 'saga', 'sequel', 'sham', 'shirk', 'simultaneously', 'snare', 'species', 'status', 'stodgy', 'substantial', 'subtle', 'sullen', 'supervise', 'tamper', 'throb', 'toxic', 'tragedy', 'trickle', 'trivial', 'uncertainty', 'unscathed', 'upright', 'urgent', 'utmost', 'vengeance', 'vicious', 'vindictive', 'vista', 'vocation', 'void', 'wary', 'whim', 'wince', 'wrath', 'yearn ']
 const grade8 = ['abet', 'accord', 'adept', 'advocate', 'agile', 'allot', 'aloof', 'amiss', 'analogy', 'anarchy', 'antics', 'apprehend', 'ardent', 'articulate', 'assail', 'assimilate', 'atrocity', 'attribute', 'audacious', 'augment', 'authority', 'avail', 'avid', 'awry', 'balmy', 'banter', 'barter', 'benign', 'bizarre', 'blasé', 'bonanza', 'bountiful', 'cache', 'capacious', 'caption', 'chastise', 'citadel', 'cite', 'clad', 'clarify', 'commemorate', 'component', 'concept', 'confiscate', 'connoisseur', 'conscientious', 'conservative', 'contagious', 'conventional', 'convey', 'crucial', 'crusade', 'culminate', 'deceptive', 'decipher', 'decree', 'deface', 'defect', 'deplore', 'deploy', 'desist', 'desolate', 'deter', 'dialect', 'dire', 'discern', 'disdain', 'disgruntled', 'dispatch', 'disposition', 'doctrine', 'dub', 'durable', 'eccentric', 'elite', 'embargo', 'embark', 'encroach', 'endeavor', 'enhance', 'enigma', 'epoch', 'era', 'eventful', 'evolve', 'exceptional', 'excerpt', 'excruciating', 'exemplify', 'exotic', 'facilitate', 'fallacy', 'fastidious', 'feasible', 'fend', 'ferret', 'flair', 'flustered', 'foreboding', 'forfeit', 'formidable', 'fortify', 'foster', 'gaunt', 'gingerly', 'glut', 'grapple', 'grope', 'gullible', 'haggard', 'haven', 'heritage', 'hindrance', 'hover', 'humane', 'imperative', 'inaugurate', 'incense', 'indifferent', 'infinite', 'instill', 'institute', 'intervene', 'intricate', 'inventive', 'inventory', 'irascible', 'jurisdiction', 'languish', 'legendary', 'liberal', 'loll', 'lucrative', 'luminous', 'memoir', 'mercenary', 'mien', 'millennium', 'minimize', 'modify', 'muse', 'muster', 'onslaught', 'ornate', 'ovation', 'overt', 'pang', 'panorama', 'perspective', 'phenomenon', 'pioneer', 'pithy', 'pivotal', 'plausible', 'plunder', 'porous', 'preposterous', 'principal', 'prodigy', 'proficient', 'profound', 'pseudonym', 'pungent', 'rankle', 'rational', 'rebuke', 'reception', 'recourse', 'recur', 'renounce', 'renown', 'revenue', 'rubble', 'rue', 'sage', 'sedative', 'serene', 'servile', 'shackle', 'sleek', 'spontaneous', 'sporadic', 'stamina', 'stance', 'staple', 'stint', 'strident', 'sublime', 'subside', 'succumb', 'surpass', 'susceptible', 'swelter', 'tedious', 'teem', 'theme', 'tirade', 'tract', 'transition', 'trepidation', 'turbulent', 'tycoon', 'ultimate', 'ungainly', 'vice versa', 'vie', 'vilify', 'voracious', 'wage', 'wrangle']
 var total_grades = [grade8, grade7, grade6, grade5, grade4, grade3, grade2];
-
-
 var score = 5;        //need to reset each time?-----------------
 var final_score = 0;
 var final_grade = 0;
-
 if (!('webkitSpeechRecognition' in window)) {
   upgrade();
 } else {
@@ -309,13 +297,11 @@ if (!('webkitSpeechRecognition' in window)) {
   var recognition = new webkitSpeechRecognition();
   recognition.continuous = true;
   recognition.interimResults = true;
-
   recognition.onstart = function() {
     recognizing = true;
     showInfo('info_speak_now');
     start_img.src = 'mic-animate.gif';
   };
-
   recognition.onerror = function(event) {
     if (event.error == 'no-speech') {
       start_img.src = 'mic.gif';
@@ -336,7 +322,6 @@ if (!('webkitSpeechRecognition' in window)) {
       ignore_onend = true;
     }
   };
-
   recognition.onend = function() {
     recognizing = false;
     if (ignore_onend) {
@@ -355,7 +340,6 @@ if (!('webkitSpeechRecognition' in window)) {
       window.getSelection().addRange(range);
     }
   };
-
   recognition.onresult = function(event) {
     var interim_transcript = '';
     for (var i = event.resultIndex; i < event.results.length; ++i) {
@@ -371,23 +355,19 @@ if (!('webkitSpeechRecognition' in window)) {
     scorer();
   };
 }
-
 function upgrade() {
   start_button.style.visibility = 'hidden';
   showInfo('info_upgrade');
 }
-
 var two_line = /\n\n/g;
 var one_line = /\n/g;
 function linebreak(s) {
   return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
 }
-
 var first_char = /\S/;
 function capitalize(s) {
   return s.replace(first_char, function(m) { return m.toUpperCase(); });
 }
-
 function scorer() {
   if (final_transcript != ''){
   var transcript_split = (final_transcript.toLowerCase()).split(' ');
@@ -405,19 +385,22 @@ function scorer() {
       }
     }
   }
-  if (transcript_split.length >=5 && transcript_split.length <= 20)
+  if (transcript_split.length >=5)//&& transcript_split.length <= 20)
   {
     score++;
   }
-  if (score == 0)
+  if (score == 0) 
     showInfo('info_score0');
   if (score == 1)
     showInfo('info_score1');
-  if (score == 2)
+  if (score == 2) 
     showInfo('info_score2');
   }
 }
-
+function finalResults() {
+  sentenceLength = transcript_split.length
+  vocabLevel = final_grade
+}
 function ctgy1Button() {
   if (recognizing) {
     recognizing = false;
@@ -427,9 +410,8 @@ function ctgy1Button() {
   showButtons('none');
   ctgy1_info.style.display = 'inline-block';
   showInfo('');
-
+  readOutLoud(ctgy1_info.outerHTML);
 }
-
 function ctgy2Button() {
   if (recognizing) {
     recognizing = false;
@@ -439,8 +421,8 @@ function ctgy2Button() {
   showButtons('none');
   ctgy2_info.style.display = 'inline-block';
   showInfo('');
+  readOutLoud(ctgy2_info.outerHTML);
 }
-
 function ctgy3Button() {
   if (recognizing) {
     recognizing = false;
@@ -450,8 +432,8 @@ function ctgy3Button() {
   showButtons('none');
   ctgy3_info.style.display = 'inline-block';
   showInfo('');
+  readOutLoud(ctgy3_info.outerHTML);
 }
-
 function ctgy4Button() {
   if (recognizing) {
     recognizing = false;
@@ -461,8 +443,8 @@ function ctgy4Button() {
   showButtons('none');
   ctgy4_info.style.display = 'inline-block';
   showInfo('');
+  readOutLoud(ctgy4_info.outerHTML);
 }
-
 function ctgy5Button() {
   if (recognizing) {
     recognizing = false;
@@ -472,8 +454,8 @@ function ctgy5Button() {
   showButtons('none');
   ctgy5_info.style.display = 'inline-block';
   showInfo('');
+  readOutLoud(ctgy5_info.outerHTML);
 }
-
 function ctgy6Button() {
   if (recognizing) {
     recognizing = false;
@@ -483,8 +465,8 @@ function ctgy6Button() {
   showButtons('none');
   ctgy6_info.style.display = 'inline-block';
   showInfo('');
+  readOutLoud(ctgy6_info.outerHTML);
 }
-
 function ctgy7Button() {
   if (recognizing) {
     recognizing = false;
@@ -494,8 +476,8 @@ function ctgy7Button() {
   showButtons('none');
   ctgy7_info.style.display = 'inline-block';
   showInfo('');
+  readOutLoud(ctgy7_info.outerHTML);
 }
-
 function ctgy8Button() {
   if (recognizing) {
     recognizing = false;
@@ -505,8 +487,8 @@ function ctgy8Button() {
   showButtons('none');
   ctgy8_info.style.display = 'inline-block';
   showInfo('');
+  readOutLoud(ctgy8_info.outerHTML);
 }
-
 function startButton(event) {
   if (recognizing) {
     recognition.stop();
@@ -526,7 +508,6 @@ function startButton(event) {
   //showButtons('none');
   start_timestamp = event.timeStamp;
 }
-
 function showInfo(s) {
   if (s) {
     for (var child = info.firstChild; child; child = child.nextSibling) {
@@ -539,9 +520,7 @@ function showInfo(s) {
     info.style.visibility = 'hidden';
   }
 }
-
 showButtons('inline-block');
-
 var current_style;
 function showButtons(style) {
   if (style == current_style) {
@@ -564,5 +543,15 @@ function showButtons(style) {
   ctgy6_info.style.display = 'none';
   ctgy7_info.style.display = 'none';
   ctgy8_info.style.display = 'none';
+}
+function readOutLoud(message) {
+  if (window.speechSynthesis.isSpeaking === true) 
+    window.speechSynthesis.cancel();
+  var speech = new SpeechSynthesisUtterance();
+  speech.text = message;
+  speech.volume = 1;
+  speech.rate = 1;
+  speech.pitch = 2;
+  window.speechSynthesis.speak(speech);
 }
 </script>
