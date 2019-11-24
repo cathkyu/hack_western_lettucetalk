@@ -1,5 +1,7 @@
 # Hack Western 2019: LettuceTalk
 
+(https://user-images.githubusercontent.com/37402072/69495810-21519000-0e99-11ea-9f01-c7d7a376dce4.jpg)
+
 ## Inspiration
 We were inspired to create a safe and supportive environment targeted towards individuals with ADHD/autism to practice and improve upon their social skills. As many struggle having weak communication skills and may not have the opportunity to work on it regularly, we wanted our web application to be an avenue for more opportunities of talking. We decided to tackle the 
 ## What it does
