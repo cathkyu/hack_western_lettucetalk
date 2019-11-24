@@ -19,3 +19,6 @@ We were proud to have created a functional prototype of the web app we were envi
 Javascript, HTML & CSS, Google Speech to Text API, API implementation, Standard Library
 ## What's next for LettuceTalk
 In order for LettuceTalk to become an application that can provide more educational and medical purposes for users(mostly with ADHD/autism), visual functions should be added to the program that can trigger past memories of individuals by selecting the specified topics by analyzing the photos taken in the past. This is so to provide the user experience with more personally customized way.
+
+
+Link to Google Sheets: https://docs.google.com/spreadsheets/d/1AjabefGNcwWHNurFVb2GYYKcakt7eE2L6oIDf7NKbQI/edit#gid=0
